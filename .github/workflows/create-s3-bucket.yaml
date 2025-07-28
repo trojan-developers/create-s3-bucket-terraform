@@ -133,7 +133,7 @@ jobs:
         with:
           clientId: ${{ secrets.PORT_CLIENT_ID }}
           clientSecret: ${{ secrets.PORT_CLIENT_SECRET }}
-          baseUrl: https://api.us.getport.io
+          baseUrl: https://api.getport.io
           operation: PATCH_RUN
           runId: ${{ needs.start.outputs.port_run_id }}
           logMessage: "📥 Created PR for S3 bucket: ${{ steps.create_pr.outputs.pull-request-url }}"
@@ -178,7 +178,7 @@ jobs:
         with:
           clientId: ${{ secrets.PORT_CLIENT_ID }}
           clientSecret: ${{ secrets.PORT_CLIENT_SECRET }}
-          baseUrl: https://api.us.getport.io
+          baseUrl: https://api.getport.io
           operation: PATCH_RUN
           runId: ${{ needs.start.outputs.port_run_id }}
           logMessage: "🔧 Starting terraform apply for S3 bucket `${{ github.event.inputs.bucket_name }}`"
