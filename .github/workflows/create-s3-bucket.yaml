@@ -29,7 +29,7 @@ jobs:
       - name: Extract Port Run ID
         id: extract_run_id
         run: |
-          PORT_RUN_ID=$(echo '${{ github.event.inputs.port_context }}' | jq -r '.runId')
+          PORT_RUN_ID=$(echo '${{ github.event.inputs.port_context }}' | jq -r '.run_id')
           echo "PORT_RUN_ID=$PORT_RUN_ID" >> $GITHUB_ENV
           echo "PORT_RUN_ID=$PORT_RUN_ID" >> $GITHUB_OUTPUT
 
@@ -183,7 +183,7 @@ jobs:
           runId: ${{ needs.start.outputs.port_run_id }}
           logMessage: "🔧 Starting terraform apply for S3 bucket `${{ github.event.inputs.bucket_name }}`"
 
-      - name: Terraform Init & Apply
+      - name: Terraform Init & Apply    
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
