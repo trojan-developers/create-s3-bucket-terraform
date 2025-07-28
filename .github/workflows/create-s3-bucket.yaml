@@ -201,7 +201,7 @@ jobs:
         with:
           clientId: ${{ secrets.PORT_CLIENT_ID }}
           clientSecret: ${{ secrets.PORT_CLIENT_SECRET }}
-          baseUrl: https://api.us.getport.io
+          baseUrl: https://api.getport.io
           operation: PATCH_RUN
           runId: ${{ needs.start.outputs.port_run_id }}
           status: "SUCCESS"
